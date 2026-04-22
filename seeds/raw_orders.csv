@@ -1,0 +1,9 @@
+id,user_id,order_date,status
+1,1,2024-01-01,completed
+2,3,2024-01-02,shipped
+3,4,2024-01-04,completed
+4,1,2024-02-10,shipped
+5,2,2024-03-01,placed
+6,3,2024-03-12,completed
+7,5,2024-04-01,return_pending
+8,2,2024-04-15,completed

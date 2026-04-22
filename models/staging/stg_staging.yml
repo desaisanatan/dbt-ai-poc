@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Staged customer data from raw source
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer first name
+      - name: last_name
+        description: Customer last name
+
+  - name: stg_orders
+    description: Staged order data from raw source
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to customers
+        tests:
+          - not_null
+      - name: order_date
+        description: Date the order was placed
+      - name: status
+        description: Order status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']

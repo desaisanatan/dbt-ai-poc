@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "DB_DOMAIN"."PUBLIC"."RAW_CUSTOMERS";
+    -- dbt seed --
+    
+            insert into DB_DOMAIN.PUBLIC.raw_customers (id, first_name, last_name) values
+            (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+        
+
+;
+  

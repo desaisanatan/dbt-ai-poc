@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: iqc66297
+      user: DESAISANATAN
+      role: ACCOUNTADMIN
+      database: DB_DOMAIN
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 4

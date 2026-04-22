@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Customer dimension with order summary metrics
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer first name
+      - name: last_name
+        description: Customer last name
+      - name: first_order_date
+        description: Date of first order
+      - name: most_recent_order_date
+        description: Date of most recent order
+      - name: number_of_orders
+        description: Total lifetime order count

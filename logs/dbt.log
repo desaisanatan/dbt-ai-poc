@@ -1,0 +1,560 @@
+
+
+============================== 18:12:24.680206 | 317b585a-84be-46f1-8235-8e8e1a04f6c5 ==============================
+[0m18:12:24.680206 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m18:12:24.681086 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m18:12:24.954967 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m18:12:25.367588 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m18:12:25.368705 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:12:27.196576 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m18:12:27.198752 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m18:12:27.259783 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 8 data tests, 2 sources, 474 macros
+[0m18:12:27.262774 [info ] [Dummy-1   ]: 
+[0m18:12:27.263303 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m18:12:27.263734 [info ] [Dummy-1   ]: 
+[0m18:12:27.264440 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m18:12:27.270418 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DB_DOMAIN'
+[0m18:12:27.271668 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DB_DOMAIN'
+[0m18:12:27.272782 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DB_DOMAIN'
+[0m18:12:27.362766 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN"
+[0m18:12:27.363456 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN"
+[0m18:12:27.364076 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN"
+[0m18:12:27.364564 [debug] [ThreadPool]: On list_DB_DOMAIN: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN"} */
+show terse schemas in database DB_DOMAIN
+    limit 10000
+[0m18:12:27.365036 [debug] [ThreadPool]: On list_DB_DOMAIN: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN"} */
+show terse schemas in database DB_DOMAIN
+    limit 10000
+[0m18:12:27.365494 [debug] [ThreadPool]: On list_DB_DOMAIN: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN"} */
+show terse schemas in database DB_DOMAIN
+    limit 10000
+[0m18:12:27.365922 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:27.366352 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:27.366774 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:27.715107 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.349 seconds
+[0m18:12:27.715908 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.350 seconds
+[0m18:12:27.718156 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.351 seconds
+[0m18:12:27.723191 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DB_DOMAIN_PUBLIC_staging'
+[0m18:12:27.724073 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DB_DOMAIN, now list_DB_DOMAIN_PUBLIC)
+[0m18:12:27.724933 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DB_DOMAIN, now list_DB_DOMAIN_PUBLIC_marts)
+[0m18:12:27.737472 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_staging"
+[0m18:12:27.740901 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC"
+[0m18:12:27.744299 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_marts"
+[0m18:12:27.744836 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_staging"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m18:12:27.745335 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m18:12:27.745807 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_marts"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m18:12:27.746295 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:27.746718 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:27.747130 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:28.101568 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.355 seconds
+[0m18:12:28.105869 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC"
+[0m18:12:28.106376 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC"} */
+show objects in DB_DOMAIN.PUBLIC
+    limit 10000
+    
+;
+[0m18:12:28.135472 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.389 seconds
+[0m18:12:28.137256 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_staging"
+[0m18:12:28.137702 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_staging"} */
+show objects in DB_DOMAIN.PUBLIC_staging
+    limit 10000
+    
+;
+[0m18:12:28.150987 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.404 seconds
+[0m18:12:28.152637 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_marts"
+[0m18:12:28.153088 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_marts"} */
+show objects in DB_DOMAIN.PUBLIC_marts
+    limit 10000
+    
+;
+[0m18:12:28.255993 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.118 seconds
+[0m18:12:28.256842 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.150 seconds
+[0m18:12:28.258891 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_staging"
+[0m18:12:28.260671 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC"
+[0m18:12:28.261223 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_staging: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_staging"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m18:12:28.261721 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m18:12:28.269265 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.116 seconds
+[0m18:12:28.271025 [debug] [ThreadPool]: Using snowflake connection "list_DB_DOMAIN_PUBLIC_marts"
+[0m18:12:28.271470 [debug] [ThreadPool]: On list_DB_DOMAIN_PUBLIC_marts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_DB_DOMAIN_PUBLIC_marts"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m18:12:28.328753 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.066 seconds
+[0m18:12:28.339815 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.068 seconds
+[0m18:12:28.377796 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.115 seconds
+[0m18:12:28.385610 [debug] [Thread-2 (]: Began running node model.dbt_ai_poc.stg_customers
+[0m18:12:28.386179 [debug] [Thread-3 (]: Began running node model.dbt_ai_poc.stg_orders
+[0m18:12:28.386737 [debug] [Thread-4 (]: Began running node seed.dbt_ai_poc.raw_customers
+[0m18:12:28.387269 [debug] [Thread-5 (]: Began running node seed.dbt_ai_poc.raw_orders
+[0m18:12:28.387899 [info ] [Thread-2 (]: 1 of 13 START sql view model PUBLIC_staging.stg_customers ...................... [RUN]
+[0m18:12:28.388617 [info ] [Thread-3 (]: 2 of 13 START sql view model PUBLIC_staging.stg_orders ......................... [RUN]
+[0m18:12:28.389267 [info ] [Thread-4 (]: 3 of 13 START seed file PUBLIC.raw_customers ................................... [RUN]
+[0m18:12:28.389868 [info ] [Thread-5 (]: 4 of 13 START seed file PUBLIC.raw_orders ...................................... [RUN]
+[0m18:12:28.390485 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DB_DOMAIN_PUBLIC, now model.dbt_ai_poc.stg_customers)
+[0m18:12:28.391010 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DB_DOMAIN_PUBLIC_marts, now model.dbt_ai_poc.stg_orders)
+[0m18:12:28.391537 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_DB_DOMAIN_PUBLIC_staging, now seed.dbt_ai_poc.raw_customers)
+[0m18:12:28.392057 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly list_DB_DOMAIN, now seed.dbt_ai_poc.raw_orders)
+[0m18:12:28.392555 [debug] [Thread-2 (]: Began compiling node model.dbt_ai_poc.stg_customers
+[0m18:12:28.393021 [debug] [Thread-3 (]: Began compiling node model.dbt_ai_poc.stg_orders
+[0m18:12:28.393464 [debug] [Thread-4 (]: Began compiling node seed.dbt_ai_poc.raw_customers
+[0m18:12:28.393911 [debug] [Thread-5 (]: Began compiling node seed.dbt_ai_poc.raw_orders
+[0m18:12:28.404839 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_ai_poc.stg_customers"
+[0m18:12:28.409587 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_ai_poc.stg_orders"
+[0m18:12:28.410222 [debug] [Thread-4 (]: Began executing node seed.dbt_ai_poc.raw_customers
+[0m18:12:28.410731 [debug] [Thread-5 (]: Began executing node seed.dbt_ai_poc.raw_orders
+[0m18:12:28.436567 [debug] [Thread-3 (]: Began executing node model.dbt_ai_poc.stg_orders
+[0m18:12:28.437082 [debug] [Thread-2 (]: Began executing node model.dbt_ai_poc.stg_customers
+[0m18:12:28.488899 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:28.494841 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_ai_poc.stg_orders"
+[0m18:12:28.499985 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_ai_poc.stg_customers"
+[0m18:12:28.503921 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:28.504712 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+BEGIN
+[0m18:12:28.506206 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+BEGIN
+[0m18:12:28.507562 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_ai_poc.stg_orders"
+[0m18:12:28.508177 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:12:28.509283 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_ai_poc.stg_customers"
+[0m18:12:28.509886 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m18:12:28.510497 [debug] [Thread-3 (]: On model.dbt_ai_poc.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_ai_poc.stg_orders"} */
+create or replace   view DB_DOMAIN.PUBLIC_staging.stg_orders
+  
+   as (
+    with source as (
+    select * from DB_DOMAIN.PUBLIC.raw_orders
+),
+
+renamed as (
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+    from source
+)
+
+select * from renamed
+  );
+[0m18:12:28.511662 [debug] [Thread-2 (]: On model.dbt_ai_poc.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_ai_poc.stg_customers"} */
+create or replace   view DB_DOMAIN.PUBLIC_staging.stg_customers
+  
+   as (
+    with source as (
+    select * from DB_DOMAIN.PUBLIC.raw_customers
+),
+
+renamed as (
+    select
+        id as customer_id,
+        first_name,
+        last_name
+    from source
+)
+
+select * from renamed
+  );
+[0m18:12:28.512687 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:12:28.513316 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:12:29.010601 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.502 seconds
+[0m18:12:29.011413 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:29.012041 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+truncate table "DB_DOMAIN"."PUBLIC"."RAW_CUSTOMERS"
+  ;
+[0m18:12:29.021600 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.512 seconds
+[0m18:12:29.022315 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:29.022882 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+truncate table "DB_DOMAIN"."PUBLIC"."RAW_ORDERS"
+  ;
+[0m18:12:29.156385 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.644 seconds
+[0m18:12:29.175550 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.662 seconds
+[0m18:12:29.187101 [info ] [Thread-3 (]: 2 of 13 OK created sql view model PUBLIC_staging.stg_orders .................... [[32mSUCCESS 1[0m in 0.79s]
+[0m18:12:29.187876 [info ] [Thread-2 (]: 1 of 13 OK created sql view model PUBLIC_staging.stg_customers ................. [[32mSUCCESS 1[0m in 0.80s]
+[0m18:12:29.188742 [debug] [Thread-3 (]: Finished running node model.dbt_ai_poc.stg_orders
+[0m18:12:29.189437 [debug] [Thread-2 (]: Finished running node model.dbt_ai_poc.stg_customers
+[0m18:12:29.190628 [debug] [Thread-3 (]: Began running node test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m18:12:29.191185 [debug] [Thread-2 (]: Began running node test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5
+[0m18:12:29.191940 [info ] [Thread-3 (]: 5 of 13 START test accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [RUN]
+[0m18:12:29.192530 [info ] [Thread-2 (]: 6 of 13 START test not_null_stg_orders_customer_id ............................. [RUN]
+[0m18:12:29.194921 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_ai_poc.stg_orders, now test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad)
+[0m18:12:29.195517 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_ai_poc.stg_customers, now test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m18:12:29.196052 [debug] [Thread-3 (]: Began compiling node test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m18:12:29.196553 [debug] [Thread-2 (]: Began compiling node test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5
+[0m18:12:29.202477 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m18:12:29.212618 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m18:12:29.213600 [debug] [Thread-3 (]: Began executing node test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m18:12:29.214157 [debug] [Thread-2 (]: Began executing node test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5
+[0m18:12:29.232208 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m18:12:29.236103 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m18:12:29.237722 [debug] [Thread-3 (]: Using snowflake connection "test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"
+[0m18:12:29.238741 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m18:12:29.239284 [debug] [Thread-3 (]: On test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from DB_DOMAIN.PUBLIC_staging.stg_orders
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'placed','shipped','completed','return_pending','returned'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:29.239811 [debug] [Thread-2 (]: On test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from DB_DOMAIN.PUBLIC_staging.stg_orders
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:29.240344 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:12:29.240793 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:12:29.285499 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.273 seconds
+[0m18:12:29.286382 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:29.287048 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+COMMIT
+[0m18:12:29.302546 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.279 seconds
+[0m18:12:29.303361 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:29.303972 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+COMMIT
+[0m18:12:29.551247 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.263 seconds
+[0m18:12:29.567777 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:29.568533 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+BEGIN
+[0m18:12:29.575638 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.271 seconds
+[0m18:12:29.577759 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:29.578398 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+BEGIN
+[0m18:12:29.631454 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m18:12:29.632425 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:29.632991 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+insert into DB_DOMAIN.PUBLIC.raw_customers (id, first_name, last_name) values
+            (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)...
+[0m18:12:29.648514 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m18:12:29.649546 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:29.650106 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+insert into DB_DOMAIN.PUBLIC.raw_orders (id, user_id, order_date, status) values
+            (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)...
+[0m18:12:29.835322 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.595 seconds
+[0m18:12:29.839886 [info ] [Thread-3 (]: 5 of 13 PASS accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned  [[32mPASS[0m in 0.65s]
+[0m18:12:29.840773 [debug] [Thread-3 (]: Finished running node test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad
+[0m18:12:29.841447 [debug] [Thread-3 (]: Began running node test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:12:29.842125 [info ] [Thread-3 (]: 7 of 13 START test not_null_stg_orders_order_id ................................ [RUN]
+[0m18:12:29.842771 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dbt_ai_poc.accepted_values_stg_orders_status__placed__shipped__completed__return_pending__returned.080fb20aad, now test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64)
+[0m18:12:29.843306 [debug] [Thread-3 (]: Began compiling node test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:12:29.849389 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64"
+[0m18:12:29.850205 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.609 seconds
+[0m18:12:29.852761 [info ] [Thread-2 (]: 6 of 13 PASS not_null_stg_orders_customer_id ................................... [[32mPASS[0m in 0.66s]
+[0m18:12:29.853446 [debug] [Thread-3 (]: Began executing node test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:12:29.854121 [debug] [Thread-2 (]: Finished running node test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5
+[0m18:12:29.858132 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64"
+[0m18:12:29.858877 [debug] [Thread-2 (]: Began running node test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a
+[0m18:12:29.859740 [info ] [Thread-2 (]: 8 of 13 START test unique_stg_orders_order_id .................................. [RUN]
+[0m18:12:29.860737 [debug] [Thread-3 (]: Using snowflake connection "test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64"
+[0m18:12:29.861360 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_ai_poc.not_null_stg_orders_customer_id.af79d5e4b5, now test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a)
+[0m18:12:29.861901 [debug] [Thread-3 (]: On test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select order_id
+from DB_DOMAIN.PUBLIC_staging.stg_orders
+where order_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:29.862410 [debug] [Thread-2 (]: Began compiling node test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a
+[0m18:12:29.862913 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:12:29.870916 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a"
+[0m18:12:29.871882 [debug] [Thread-2 (]: Began executing node test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a
+[0m18:12:29.875956 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a"
+[0m18:12:29.877148 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a"
+[0m18:12:29.877700 [debug] [Thread-2 (]: On test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from DB_DOMAIN.PUBLIC_staging.stg_orders
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:29.878290 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:12:30.036434 [debug] [Thread-5 (]: SQL status: SUCCESS 8 in 0.386 seconds
+[0m18:12:30.037262 [debug] [Thread-5 (]: Using snowflake connection "seed.dbt_ai_poc.raw_orders"
+[0m18:12:30.037778 [debug] [Thread-5 (]: On seed.dbt_ai_poc.raw_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_orders"} */
+COMMIT
+[0m18:12:30.139953 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.504 seconds
+[0m18:12:30.140724 [debug] [Thread-4 (]: Using snowflake connection "seed.dbt_ai_poc.raw_customers"
+[0m18:12:30.141274 [debug] [Thread-4 (]: On seed.dbt_ai_poc.raw_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "seed.dbt_ai_poc.raw_customers"} */
+COMMIT
+[0m18:12:30.393363 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.355 seconds
+[0m18:12:30.394178 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.531 seconds
+[0m18:12:30.400725 [debug] [Thread-5 (]: Writing runtime SQL for node "seed.dbt_ai_poc.raw_orders"
+[0m18:12:30.403237 [info ] [Thread-3 (]: 7 of 13 PASS not_null_stg_orders_order_id ...................................... [[32mPASS[0m in 0.56s]
+[0m18:12:30.404263 [debug] [Thread-3 (]: Finished running node test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:12:30.405107 [debug] [Thread-3 (]: Began running node test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:12:30.407982 [info ] [Thread-5 (]: 4 of 13 OK loaded seed file PUBLIC.raw_orders .................................. [[32mINSERT 8[0m in 2.02s]
+[0m18:12:30.408666 [info ] [Thread-3 (]: 9 of 13 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m18:12:30.409439 [debug] [Thread-5 (]: Finished running node seed.dbt_ai_poc.raw_orders
+[0m18:12:30.410044 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dbt_ai_poc.not_null_stg_orders_order_id.81cfe2fe64, now test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m18:12:30.410630 [debug] [Thread-5 (]: Began running node test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada
+[0m18:12:30.411227 [debug] [Thread-3 (]: Began compiling node test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:12:30.411747 [info ] [Thread-5 (]: 10 of 13 START test unique_stg_customers_customer_id ........................... [RUN]
+[0m18:12:30.419797 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:12:30.420508 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly seed.dbt_ai_poc.raw_orders, now test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada)
+[0m18:12:30.421251 [debug] [Thread-5 (]: Began compiling node test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada
+[0m18:12:30.421752 [debug] [Thread-3 (]: Began executing node test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:12:30.427627 [debug] [Thread-5 (]: Writing injected SQL for node "test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada"
+[0m18:12:30.428534 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.287 seconds
+[0m18:12:30.432479 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:12:30.433665 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.dbt_ai_poc.raw_customers"
+[0m18:12:30.434291 [debug] [Thread-5 (]: Began executing node test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada
+[0m18:12:30.435610 [debug] [Thread-3 (]: Using snowflake connection "test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:12:30.439771 [debug] [Thread-5 (]: Writing runtime sql for node "test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada"
+[0m18:12:30.442497 [info ] [Thread-4 (]: 3 of 13 OK loaded seed file PUBLIC.raw_customers ............................... [[32mINSERT 5[0m in 2.05s]
+[0m18:12:30.443140 [debug] [Thread-3 (]: On test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from DB_DOMAIN.PUBLIC_staging.stg_customers
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:30.444037 [debug] [Thread-4 (]: Finished running node seed.dbt_ai_poc.raw_customers
+[0m18:12:30.445176 [debug] [Thread-5 (]: Using snowflake connection "test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada"
+[0m18:12:30.445703 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:12:30.446545 [debug] [Thread-5 (]: On test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from DB_DOMAIN.PUBLIC_staging.stg_customers
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:30.447245 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m18:12:30.482008 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.604 seconds
+[0m18:12:30.484509 [info ] [Thread-2 (]: 8 of 13 PASS unique_stg_orders_order_id ........................................ [[32mPASS[0m in 0.62s]
+[0m18:12:30.485648 [debug] [Thread-2 (]: Finished running node test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a
+[0m18:12:31.415036 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.969 seconds
+[0m18:12:31.417641 [info ] [Thread-3 (]: 9 of 13 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 1.01s]
+[0m18:12:31.418527 [debug] [Thread-3 (]: Finished running node test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:12:31.438479 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.991 seconds
+[0m18:12:31.440976 [info ] [Thread-5 (]: 10 of 13 PASS unique_stg_customers_customer_id ................................. [[32mPASS[0m in 1.02s]
+[0m18:12:31.441751 [debug] [Thread-5 (]: Finished running node test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada
+[0m18:12:31.443055 [debug] [Thread-4 (]: Began running node model.dbt_ai_poc.dim_customers
+[0m18:12:31.444056 [info ] [Thread-4 (]: 11 of 13 START sql table model PUBLIC_marts.dim_customers ...................... [RUN]
+[0m18:12:31.444787 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly seed.dbt_ai_poc.raw_customers, now model.dbt_ai_poc.dim_customers)
+[0m18:12:31.445307 [debug] [Thread-4 (]: Began compiling node model.dbt_ai_poc.dim_customers
+[0m18:12:31.452340 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_ai_poc.dim_customers"
+[0m18:12:31.453172 [debug] [Thread-4 (]: Began executing node model.dbt_ai_poc.dim_customers
+[0m18:12:31.480147 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_ai_poc.dim_customers"
+[0m18:12:31.482081 [debug] [Thread-4 (]: Using snowflake connection "model.dbt_ai_poc.dim_customers"
+[0m18:12:31.482688 [debug] [Thread-4 (]: On model.dbt_ai_poc.dim_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.dbt_ai_poc.dim_customers"} */
+create or replace transient table DB_DOMAIN.PUBLIC_marts.dim_customers
+         as
+        (with customers as (
+    select * from DB_DOMAIN.PUBLIC_staging.stg_customers
+),
+
+orders as (
+    select * from DB_DOMAIN.PUBLIC_staging.stg_orders
+),
+
+customer_orders as (
+    select
+        customer_id,
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+    from orders
+    group by customer_id
+),
+
+final as (
+    select
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        co.first_order_date,
+        co.most_recent_order_date,
+        coalesce(co.number_of_orders, 0) as number_of_orders
+    from customers c
+    left join customer_orders co
+        on c.customer_id = co.customer_id
+)
+
+select * from final
+        );
+[0m18:12:31.483206 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:12:32.487015 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.004 seconds
+[0m18:12:32.490436 [info ] [Thread-4 (]: 11 of 13 OK created sql table model PUBLIC_marts.dim_customers ................. [[32mSUCCESS 1[0m in 1.05s]
+[0m18:12:32.491247 [debug] [Thread-4 (]: Finished running node model.dbt_ai_poc.dim_customers
+[0m18:12:32.492447 [debug] [Thread-3 (]: Began running node test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m18:12:32.493037 [debug] [Thread-5 (]: Began running node test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd
+[0m18:12:32.493759 [info ] [Thread-3 (]: 12 of 13 START test not_null_dim_customers_customer_id ......................... [RUN]
+[0m18:12:32.494376 [info ] [Thread-5 (]: 13 of 13 START test unique_dim_customers_customer_id ........................... [RUN]
+[0m18:12:32.495043 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dbt_ai_poc.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d)
+[0m18:12:32.495642 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.dbt_ai_poc.unique_stg_customers_customer_id.c7614daada, now test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd)
+[0m18:12:32.496165 [debug] [Thread-3 (]: Began compiling node test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m18:12:32.496635 [debug] [Thread-5 (]: Began compiling node test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd
+[0m18:12:32.503644 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m18:12:32.509822 [debug] [Thread-5 (]: Writing injected SQL for node "test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m18:12:32.511075 [debug] [Thread-3 (]: Began executing node test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m18:12:32.511678 [debug] [Thread-5 (]: Began executing node test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd
+[0m18:12:32.518000 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m18:12:32.522238 [debug] [Thread-5 (]: Writing runtime sql for node "test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m18:12:32.523661 [debug] [Thread-3 (]: Using snowflake connection "test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m18:12:32.524845 [debug] [Thread-5 (]: Using snowflake connection "test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m18:12:32.525431 [debug] [Thread-3 (]: On test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from DB_DOMAIN.PUBLIC_marts.dim_customers
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:32.526033 [debug] [Thread-5 (]: On test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from DB_DOMAIN.PUBLIC_marts.dim_customers
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:12:32.526559 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:12:32.527021 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m18:12:32.975204 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.448 seconds
+[0m18:12:32.977967 [info ] [Thread-3 (]: 12 of 13 PASS not_null_dim_customers_customer_id ............................... [[32mPASS[0m in 0.48s]
+[0m18:12:32.978947 [debug] [Thread-3 (]: Finished running node test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m18:12:32.990809 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.464 seconds
+[0m18:12:32.993376 [info ] [Thread-5 (]: 13 of 13 PASS unique_dim_customers_customer_id ................................. [[32mPASS[0m in 0.50s]
+[0m18:12:32.994184 [debug] [Thread-5 (]: Finished running node test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd
+[0m18:12:32.997576 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m18:12:32.998626 [debug] [Dummy-1   ]: Connection 'test.dbt_ai_poc.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m18:12:32.999119 [debug] [Dummy-1   ]: Connection 'test.dbt_ai_poc.unique_dim_customers_customer_id.15c9f1e2fd' was properly closed.
+[0m18:12:32.999555 [debug] [Dummy-1   ]: Connection 'test.dbt_ai_poc.not_null_dim_customers_customer_id.dd91cd1c8d' was properly closed.
+[0m18:12:32.999973 [debug] [Dummy-1   ]: Connection 'model.dbt_ai_poc.dim_customers' was properly closed.
+[0m18:12:33.000581 [info ] [Dummy-1   ]: 
+[0m18:12:33.001112 [info ] [Dummy-1   ]: Finished running 2 seeds, 1 table model, 8 data tests, 2 view models in 0 hours 0 minutes and 5.74 seconds (5.74s).
+[0m18:12:33.003323 [debug] [Dummy-1   ]: Command end result
+[0m18:12:33.029244 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m18:12:33.031554 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m18:12:33.038453 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m18:12:33.039029 [info ] [Dummy-1   ]: 
+[0m18:12:33.039692 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m18:12:33.040212 [info ] [Dummy-1   ]: 
+[0m18:12:33.040738 [info ] [Dummy-1   ]: Done. PASS=13 WARN=0 ERROR=0 SKIP=0 TOTAL=13
+[0m18:12:33.042545 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 8.436719, "process_in_blocks": "0", "process_kernel_time": 0.86, "process_mem_max_rss": "507252", "process_out_blocks": "0", "process_user_time": 5.98}
+[0m18:12:33.043190 [debug] [Dummy-1   ]: Command `cli build` succeeded at 18:12:33.042936 after 8.44 seconds
+[0m18:12:33.043711 [debug] [Dummy-1   ]: Flushing usage events
